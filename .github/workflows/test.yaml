@@ -1,9 +1,8 @@
 name: Secrets and Environment Variables
 
 on:
-  push:
-    branches:
-      - main
+  schedule:
+    - cron: '*/5 * * * *'  # Every 5 minutes
 
 jobs:
   top-secret:
@@ -12,6 +11,9 @@ jobs:
       MY_APP_ID: ${{ vars.APP_ID }}
 
     steps:
+      - name: Date & time
+        run: date 
+
       - name: Read a variable
         run: echo "My APP_ID value is ${{ vars.APP_ID }}"
 
