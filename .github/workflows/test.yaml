@@ -17,3 +17,8 @@ jobs:
 
       - name: Tell me a secret!
         run: echo "My existing secret is ${{ secrets.API_KEY }}"
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18' # Specify the Node.js 18 version
