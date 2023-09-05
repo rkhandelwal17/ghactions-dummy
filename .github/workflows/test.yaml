@@ -2,7 +2,7 @@ name: Secrets and Environment Variables
 
 on:
   schedule:
-    - cron: '*/5 * * * *'  # Every 5 minutes
+    - cron: '0 8 * * 5'  # Run every Friday at 8:00 AM (UTC time) i.e 6 pm AEST
 
 jobs:
   top-secret:
